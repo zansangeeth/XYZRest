@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -14,6 +15,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
 
 private const val TAG = "HomeFragment"
 
@@ -67,8 +69,8 @@ class HomeFragment : Fragment() {
         })
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
+
+
     }
-
-
 
 }

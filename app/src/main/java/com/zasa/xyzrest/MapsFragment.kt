@@ -5,18 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
 import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
-import com.google.gson.Gson
-import kotlinx.android.synthetic.main.fragment_maps.*
-import org.json.JSONArray
-import org.json.JSONObject
 
 class MapsFragment : Fragment() {
 
@@ -56,8 +50,14 @@ class MapsFragment : Fragment() {
         val jaffna = LatLng(9.6675924, 80.0165518)
         boundsBuilder.include(colombo)
         googleMap.addMarker(MarkerOptions().position(jaffna).title("Branch in jaffna"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(boundsBuilder.build(), 1000, 1000, 0))
-
+        googleMap.moveCamera(
+            CameraUpdateFactory.newLatLngBounds(
+                boundsBuilder.build(),
+                1000,
+                1000,
+                0
+            )
+        )
     }
 
     override fun onCreateView(
@@ -73,4 +73,5 @@ class MapsFragment : Fragment() {
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
     }
+
 }

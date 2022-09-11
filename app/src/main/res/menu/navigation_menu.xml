@@ -9,4 +9,5 @@
         android:id="@+id/branches"
         android:icon="@drawable/ic_baseline_location_on_24"
         android:title="Branches" />
+
 </menu>
